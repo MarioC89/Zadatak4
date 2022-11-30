@@ -1,40 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
-import { PacmanLoader } from "react-spinners";
 import { useFetch } from "../utilities/useFetch";
-
-/* const UsingAxios = () => {
-  const [users, setUsers] = useState([])
-
-  const fetchData = () => {
-    axios.get("https://hp-api.herokuapp.com/api/characters/house/gryffindor").then(response => {
-      setUsers(response.data)
-    });
-  };
-
-  useEffect(() => {
-    fetchData()
-  }, []);
-
-  return (
-    <div>
-      {users.length > 0 && (
-        <ul>
-          {users.slice(0,10).map(user => (
-            <li key={user.id}>
-              {user.name} <br/>
-              {user.image}<br/>
-              </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-};
-
-export default UsingAxios */
-
 
 const gotUrl = "https://hp-api.herokuapp.com/api/characters/house/gryffindor";
 
@@ -43,11 +9,6 @@ const CharacterScreen = () => {
   const checkIfLoading = () => {
     if (loading) {
       return (
-        // <PacmanLoader
-        //   color="yellow"
-        //   size="50"
-        //   style={{ position: "fixed", top: "50%", left: "50%" }}
-        // />
         <h1 style={{ color: "blue" }}>...loading</h1>
       );
     }

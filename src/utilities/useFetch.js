@@ -6,17 +6,17 @@ export const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchGOTData = useCallback(async () => {
+  const fetchHPData = useCallback(async () => {
     const response = await axios.get(url);
-    const dataGOT = await response.data;
+    const dataHP = await response.data;
 
     setLoading(false);
-    setData(dataGOT);
+    setData(dataHP);
   }, [url]);
 
   useEffect(() => {
-    fetchGOTData();
-  }, [fetchGOTData]);
+    fetchHPData();
+  }, [fetchHPData]);
 
   return { loading, data };
 };
